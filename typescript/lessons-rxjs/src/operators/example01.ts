@@ -1,7 +1,11 @@
 export {};
 import { of, from } from "rxjs";
 import { map, filter, first, flatMap } from "rxjs/operators";
-
+/**
+ * Creation Operators: of, from, interval, ...
+ * Pipeable Operators:map, filter, first ...
+ * 
+ */
 of(1, 2, 3, 4)
   .pipe(
     map(x => x + 1),
