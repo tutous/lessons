@@ -1,0 +1,30 @@
+.persons-table {
+  width: 300px;
+  margin-top: 10px;
+}
+
+.persons-table td{
+  min-width: 200px;
+  height: 30px;
+  border-style: none;
+}
+
+.persons-table th{
+  min-width: 200px;
+  height: 30px;
+  border-style: none;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.spinner-container {
+  height: 360px;
+  width: 390px;
+  position: fixed;
+}
+
+.spinner-container mat-spinner {
+  margin: 130px auto 0 auto;
+}

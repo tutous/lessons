@@ -15,16 +15,18 @@ let observableNumbers = new Observable<number>(subscriber => {
         subscriber.next(1);
         subscriber.next(2);
         subscriber.next(3);
-        //  setTimeout(() => { asynchronously out
+        // asynchronously out
+        // setTimeout(() => {
         subscriber.next(4);
         subscriber.complete();
-        //  }, 1000);
+        // }, 1000);
     } catch (error) {
         subscriber.error(error);
     }
 
 });
-let subscription:Subscription = observableNumbers.subscribe(
+
+let subscription: Subscription = observableNumbers.subscribe(
     // pushed values
     value => console.log(`Number ${value}`),
     // raised an error

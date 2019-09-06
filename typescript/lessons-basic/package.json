@@ -13,6 +13,7 @@
     "@angular/common": "^8.2.4",
     "@angular/core": "^8.2.4",
     "angular-in-memory-web-api": "^0.9.0",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2"
   }
 }

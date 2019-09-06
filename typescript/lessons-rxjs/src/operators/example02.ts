@@ -28,7 +28,7 @@ observable.pipe(
 ).subscribe(req => console.log('concatAll ' + req));
 /**
  * switchAll -> subscribes to the first inner Observable when it arrives, 
- * and emits each value as it arrives,, but when the next inner Observable arrives,
+ * and emits each value as it arrives, but when the next inner Observable arrives,
  * unsubscribes to the previous one , and subscribes to the new one
  */
 observable.pipe(

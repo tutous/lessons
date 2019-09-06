@@ -1,0 +1,36 @@
+<div class="course">
+
+  <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <table mat-table class="persons-table mat-elevation-z8" [dataSource]="dataSource">
+
+    <!-- Name -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let person">{{person.name}}</td>
+    </ng-container>
+
+    <!-- Name -->
+    <ng-container matColumnDef="Vorname">
+      <th mat-header-cell *matHeaderCellDef>Vorname</th>
+      <td mat-cell *matCellDef="let person">{{person.foreName}}</td>
+    </ng-container>
+
+    <!-- Name -->
+    <ng-container matColumnDef="Stadt">
+      <th mat-header-cell *matHeaderCellDef>Stadt</th>
+      <td mat-cell *matCellDef="let person">{{person.city}}</td>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row (click)="onRowClicked(row)" *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+  </table>
+
+  <mat-paginator [length]="3" [pageSize]="3" [pageSizeOptions]="[3, 5, 10]"></mat-paginator>
+
+</div>
