@@ -6,28 +6,40 @@ import { catchError, finalize, toArray } from 'rxjs/operators';
 
 export class PersonsDataSource implements DataSource<Person> {
 
-  private personsSubject = new BehaviorSubject<Person[]>([]);
+  private personsSubject = new BehaviorSubject<Person[]>([{ foreName: '-', name: '-', city: '-' }]);
 
   private loadingSubject = new BehaviorSubject<boolean>(false);
+  private notLoadingSubject = new BehaviorSubject<boolean>(true);
 
   public loading$ = this.loadingSubject.asObservable();
+  public notLoading$ = this.notLoadingSubject.asObservable();
+
+  public recordSize$ = new BehaviorSubject<number>(0);
 
   constructor(private coursesService: PersonsService) {
 
   }
 
-  loadAllPersons(pageIndex: number, pageSize: number) {
+  loadAllPersons(nameFilter: string, foreNameFilter: string, cityFilter: string,
+    sortColumn: string, sortDirection: string,
+    pageIndex: number, pageSize: number) {
 
     this.loadingSubject.next(true);
+    this.notLoadingSubject.next(false);
 
-    this.coursesService.findAllPersons().pipe(
-      toArray(),
-      catchError(() => of([])),
-      finalize(() => this.loadingSubject.next(false))
-    ).subscribe(persons => {
-      console.log(persons);
-      this.personsSubject.next(persons);
-    });
+    this.coursesService.findAllPersons(nameFilter, foreNameFilter, cityFilter, sortColumn, sortDirection, pageIndex, pageSize)
+      .pipe(
+        toArray(),
+        catchError(() => of([])),
+        finalize(() => {
+          this.recordSize$.next(5);
+          this.notLoadingSubject.next(true);
+          this.loadingSubject.next(false);
+        })
+      ).subscribe(persons => {
+        console.log(persons);
+        this.personsSubject.next(persons);
+      });
 
   }
 

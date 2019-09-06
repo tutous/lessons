@@ -1,0 +1,45 @@
+.course{
+  width: 650px;
+  margin: 50px;
+}
+
+mat-paginator {
+  margin-top: 0px;
+  background-color: #d9fccb;
+}
+
+.persons-table {
+  width: 650px;
+  margin-top: 10px;
+}
+
+.mat-header-cell{
+  font-size: 18px;
+}
+
+.mat-header-row {
+  background-color: #d9fccb;
+  border-style: none;
+  width: 650px;
+  height: 30px;
+}
+
+mat-row {
+  width: 650px;
+  height: 30px;
+}
+
+mat-row:nth-child(even) {
+  background-color: #b5eff7;
+}
+
+.spinner-container {
+  height: 50px;
+  width: 50px;
+  left: 300px;
+  position: fixed;
+}
+
+.spinner-container mat-spinner {
+  margin: 50px auto 0 auto;
+}

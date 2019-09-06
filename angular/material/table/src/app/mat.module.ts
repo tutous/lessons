@@ -9,11 +9,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 // app
 import { PersonsService } from './persons.service';
-import { AppComponent } from './app.component';
+import { MatTable } from './mat.table';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MatTable
   ],
   imports: [
     BrowserModule,
@@ -26,6 +26,6 @@ import { AppComponent } from './app.component';
     MatProgressSpinnerModule
   ],
   providers: [PersonsService],
-  bootstrap: [AppComponent]
+  bootstrap: [MatTable]
 })
-export class AppModule { }
+export class MatModule { }
