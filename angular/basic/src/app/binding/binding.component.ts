@@ -7,28 +7,35 @@ import { HelloEvent } from "./hello/hello.event";
   styleUrls: ["./binding.component.css"]
 })
 export class BindingComponent implements OnInit {
-  message_a: string;
+
+  message_a = 'hello world';
+
   message_b: string;
-  viewed_a = false;
   viewed_b = false;
 
+  message_c: string;
+  viewed_c = false;
 
   constructor() {}
 
   ngOnInit() {}
+
   onClick(message: string) {
     console.log(message);
-    this.message_a = message;
+    this.message_b = message;
   }
-  onViewed(event: HelloEvent, messageAorB: string) {
+  onViewed(event: HelloEvent, lesson: string) {
+    // log event
     console.log(event.greet);
-    if (!this.viewed_a && messageAorB == "a") {
-      alert(event.greet);
-      this.viewed_a = true;
-    }
-    if (!this.viewed_b && messageAorB == "b") {
-      alert(event.greet);
+    // lesson b
+    if (!this.viewed_b && lesson == "b") {
+      alert("lesson b " + event.greet);
       this.viewed_b = true;
+    }
+    // lesson c
+    if (!this.viewed_c && lesson == "c") {
+      alert("lesson c " + event.greet);
+      this.viewed_c = true;
     }
   }
 }

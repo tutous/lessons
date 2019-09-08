@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
 import { HelloComponent } from './binding/hello/hello.component';
 import { StructuralComponent } from './directive/structural/structural.component';
+import { DataComponent } from './directive/structural/table-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BindingComponent,
     HelloComponent,
-    StructuralComponent
+    StructuralComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,

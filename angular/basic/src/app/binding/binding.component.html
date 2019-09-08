@@ -1,12 +1,19 @@
-<div class='lesson'>
-    <app-hello greet='hello world'></app-hello>
+<h3>example 1</h3>
+<div class="lesson">
+    <app-hello greet="hello world"></app-hello>
 </div>
-<div class='lesson'>
-    <input type='text' value='-' #input01>
-    <button (click)='onClick(input01.value)'>Apply</button>
-    <app-hello [greet]='message_a' (viewed)='onViewed($event,"a")'></app-hello>
+<h3>example 2</h3>
+<div class="lesson">
+    <app-hello [greet]=message_a></app-hello>
 </div>
-<div class='lesson'>
-    <input type='text' [(ngModel)]='message_b' #input02>
-    <app-hello [greet]='message_b' (viewed)='onViewed($event,"b")'></app-hello>
+<h3>example 3</h3>
+<div class="lesson">
+    <input type="text" value="-" #input01>
+    <button (click)="onClick(input01.value)">Apply</button>
+    <app-hello [greet]="message_b" (viewed)="onViewed($event,'b')"></app-hello>
+</div>
+<h3>example 4</h3>
+<div class="lesson">
+    <input type="text" [(ngModel)]="message_c" #input02>
+    <app-hello [greet]="message_c" (viewed)="onViewed($event,'c')"></app-hello>
 </div>
