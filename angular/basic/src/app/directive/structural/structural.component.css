@@ -1,0 +1,17 @@
+td {
+    height: 30px;
+    width: 200px;
+}
+.valid {
+  background-color: greenyellow;
+}
+.error {
+  background-color: rgb(255, 0, 0);
+}
+.pending {
+  background-color: rgb(252, 255, 47);
+}
+.default {
+  background-color: rgb(223, 223, 223);
+  font-style: italic;
+}

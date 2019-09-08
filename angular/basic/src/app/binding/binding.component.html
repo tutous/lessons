@@ -1,0 +1,12 @@
+<div class='lesson'>
+    <app-hello greet='hello world'></app-hello>
+</div>
+<div class='lesson'>
+    <input type='text' value='-' #input01>
+    <button (click)='onClick(input01.value)'>Apply</button>
+    <app-hello [greet]='message_a' (viewed)='onViewed($event,"a")'></app-hello>
+</div>
+<div class='lesson'>
+    <input type='text' [(ngModel)]='message_b' #input02>
+    <app-hello [greet]='message_b' (viewed)='onViewed($event,"b")'></app-hello>
+</div>

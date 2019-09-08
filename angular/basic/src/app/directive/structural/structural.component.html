@@ -1,0 +1,31 @@
+<table>
+    <ng-container *ngFor="let person of persons; index as i" [ngSwitch]="person.status">
+        <tr *ngSwitchCase="'valid'" class='valid'>
+            <td>{{i}}</td>
+            <td>{{person.foreName}}</td>
+            <td>{{person.name}}</td>
+            <td *ngIf=" person.visibleCity">{{person.city}}</td>
+            <td *ngIf="!person.visibleCity">-</td>
+        </tr>
+        <tr *ngSwitchCase="'pending'" class='pending'>
+            <td>{{i}}</td>
+            <td>{{person.foreName}}</td>
+            <td>{{person.name}}</td>
+            <td *ngIf=" person.visibleCity">{{person.city}}</td>
+            <td *ngIf="!person.visibleCity">-</td>
+        </tr>
+        <tr *ngSwitchCase="'error'" class='error'>
+            <td>{{i}}</td>
+            <td>{{person.foreName}}</td>
+            <td>{{person.name}}</td>
+            <td *ngIf=" person.visibleCity">{{person.city}}</td>
+            <td *ngIf="!person.visibleCity">-</td>
+        </tr>
+        <tr *ngSwitchDefault class='default'>
+            <td>{{i}}</td>
+            <td>{{person.foreName}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.city}}</td>
+        </tr>
+    </ng-container>
+</table>
