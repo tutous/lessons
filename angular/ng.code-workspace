@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "webapi"
+		},
+		{
+			"path": "modules"
 		}
 	],
 	"settings": {}
