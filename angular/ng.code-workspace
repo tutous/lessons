@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "material"
+		},
+		{
+			"path": "webapi"
 		}
 	],
 	"settings": {}
