@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "modules"
+		},
+		{
+			"path": "primeng\\data\\table"
 		}
 	],
 	"settings": {}
