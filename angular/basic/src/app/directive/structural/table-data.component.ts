@@ -18,7 +18,7 @@ export class DataComponent implements OnInit {
   @Input()
   property: string;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (this.property == "foreName") {
@@ -30,8 +30,8 @@ export class DataComponent implements OnInit {
     else if (this.property == "city") {
       this.value = this.person.city;
     }
-    else {
-      this.value = '-';
+    else if (this.value.length > 0) {
+      console.log(this.value);
     }
   }
 }
