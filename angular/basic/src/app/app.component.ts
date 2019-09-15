@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <router-outlet></router-outlet>
+  <nav>
+    <div style="padding: 10px"><a [routerLink]="['/binding']">lesson binding</a></div>
+    <div style="padding: 10px"><a [routerLink]="['/directive/structural']">lesson structural directive</a></div>
+  </nav>
+  <router-outlet></router-outlet>
   `,
   styles: []
 })

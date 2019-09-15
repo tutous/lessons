@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "basic"
+		},
+		{
+			"path": "material"
+		},
+		{
+			"path": "webapi"
+		},
+		{
+			"path": "modules"
+		},
+		{
+			"path": "primeng\\data\\table"
+		}
+	],
+	"settings": {}
+}

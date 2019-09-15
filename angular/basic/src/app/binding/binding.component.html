@@ -4,7 +4,7 @@
 </div>
 <h3>example 2</h3>
 <div class="lesson">
-    <app-hello [greet]=message_a></app-hello>
+    <app-hello [greet]="message_a"></app-hello>
 </div>
 <h3>example 3</h3>
 <div class="lesson">
@@ -14,6 +14,6 @@
 </div>
 <h3>example 4</h3>
 <div class="lesson">
-    <input type="text" [(ngModel)]="message_c" #input02>
+    <input type="text" [(ngModel)]="message_c">
     <app-hello [greet]="message_c" (viewed)="onViewed($event,'c')"></app-hello>
 </div>

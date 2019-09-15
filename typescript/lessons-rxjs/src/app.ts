@@ -8,7 +8,5 @@ import * as mod_subjects from './subjects/subjects';
 import * as mod_behaviorsubject from './subjects/behaviorsubject';
 import * as mod_replaysubject from './subjects/replaysubject';
 
-// mod_transcol;
-// mod_subjects;
-// mod_behaviorsubject;
-mod_transcol;
+
+mod_exc01;

@@ -1,0 +1,1 @@
+ng g module buyer --route=buyer --routing=true --routingScope=Child --module=app
