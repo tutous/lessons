@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <person-create></person-create>
-    <person-read></person-read>
+    <app-person></app-person>
   `,
   styles: []
 })

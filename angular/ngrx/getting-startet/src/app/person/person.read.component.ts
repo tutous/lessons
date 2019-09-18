@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
-import { Person } from "./person";
+import { Observable, of } from 'rxjs';
 import { Store } from "@ngrx/store";
-import { PersonState } from "./person.state";
+
+import * as PersonActions from "./store/person.actions";
+import { PersonState } from './store/person.state';
+import { Person } from "./store/person";
 
 @Component({
   selector: "person-read",
@@ -19,11 +21,19 @@ import { PersonState } from "./person.state";
   styles: [""]
 })
 export class PersonReadComponent implements OnInit {
+
   persons: Observable<Person[]>;
 
-  constructor(private store: Store<PersonState>) {}
+  constructor(private store: Store<PersonState>) { }
 
   ngOnInit() {
-    this.persons = this.store.select("persons");
+    // get personReducer and read the personState
+    this.store.select('personReducer')
+      .subscribe(personState =>
+        // create a Observable based on the state
+        this.persons = of(personState.persons));
+    // trigger PersonEffects as action 
+    this.store.dispatch(new PersonActions.LoadPersonsAction());
   }
+
 }

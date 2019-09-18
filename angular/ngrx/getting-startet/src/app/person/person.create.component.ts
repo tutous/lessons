@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { PersonState } from "./person.state";
-import * as PersonActions from "./person.actions";
+import { PersonState } from "./store/person.state";
+import * as PersonActions from "./store/person.actions";
 
 @Component({
   selector: "person-create",
@@ -17,13 +17,14 @@ import * as PersonActions from "./person.actions";
   styles: [""]
 })
 export class PersonCreateComponent implements OnInit {
-  constructor(private store: Store<PersonState>) {}
 
-  ngOnInit() {}
+  constructor(private store: Store<PersonState>) { }
+
+  ngOnInit() { }
 
   create(name: string, foreName: string, city: string) {
     this.store.dispatch(
-      new PersonActions.AddPerson({
+      new PersonActions.AddPersonAction({
         name: name,
         foreName: foreName,
         city: city
