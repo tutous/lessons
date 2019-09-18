@@ -27,7 +27,4 @@ export class AppTableComponent implements OnInit {
         ];
     }
 
-    show(vehicle: Vehicle) {
-        alert(`${vehicle.vin} ${vehicle.year} ${vehicle.brand} ${vehicle.color}`);
-    }
 }

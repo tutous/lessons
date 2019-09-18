@@ -8,9 +8,10 @@ import { BuyerUpdateEuropeComponent } from './child/buyer-update-europe.componen
 import { BuyerUpdateAmericaComponent } from './child/buyer-update-america.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'create', pathMatch: 'full' },
   {
     path: 'create', component: BuyerCreateComponent, children: [
-      { path: 'europe', component: BuyerCreateEuropeComponent },
+      { path: 'europe/:location', component: BuyerCreateEuropeComponent },
       { path: 'america', component: BuyerCreateAmericaComponent }]
   },
   {
@@ -18,8 +19,7 @@ const routes: Routes = [
       { path: 'europe', component: BuyerUpdateEuropeComponent },
       { path: 'america', component: BuyerUpdateAmericaComponent }]
   },
-  { path: '', redirectTo: 'create', pathMatch: 'full' },
-  { path: '**', redirectTo: 'create', pathMatch: 'full' }  
+  { path: '**', redirectTo: 'create', pathMatch: 'full' }
 ];
 
 @NgModule({

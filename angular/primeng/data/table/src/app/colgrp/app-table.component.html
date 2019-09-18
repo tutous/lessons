@@ -1,0 +1,22 @@
+<p-table [columns]="cols" [value]="vehicles">
+    <ng-template pTemplate="caption">
+        List of Cars (colgrp)
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th rowspan="3">Vin</th>
+            <th colspan="3">Data</th>
+        </tr>
+        <tr>
+            <th colspan="1">Year</th>
+            <th colspan="2">Vhicle</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-vehicle let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{vehicle[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

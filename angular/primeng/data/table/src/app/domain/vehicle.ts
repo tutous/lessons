@@ -1,4 +1,4 @@
-export interface Car {
+export interface Vehicle {
     vin: string;
     year: string;
     brand: string;
