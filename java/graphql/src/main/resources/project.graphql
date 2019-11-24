@@ -1,0 +1,24 @@
+type Query{
+  projects: [project!]!
+  projectById(id: ID!): project
+}
+
+type project {
+  id: ID!
+  name: String!
+  description: String!
+  tasks: [task!]!
+}
+
+type task {
+  id: ID!
+  name: String!
+  description: String!
+  status: status!
+}
+
+enum status {
+  STARTED
+  PENDING
+  FINISHED
+}
