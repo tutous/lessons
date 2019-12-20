@@ -1,25 +1,36 @@
-import * as Actions from "./person.actions";
-import { PersonState } from './person.state';
+import { createReducer, on } from "@ngrx/store";
+import { PersonState } from "./person.state";
+import {
+  loadPersons,
+  loadPersonsSuccess,
+  loadPersonsFailure,
+  addPerson,
+  removePerson
+} from "./person.actions";
 
-const initialState: PersonState = {
+export const initialPersonState: PersonState = {
   persons: [],
   loading: false,
   error: undefined
-}
+};
 
-let personReducer = function personReducer(state: PersonState = initialState, action: Actions.PersonActions): PersonState {
-  switch (action.type) {
-    case Actions.LOAD_PERSONS:
-      return { ...state, loading: true };
-    case Actions.LOAD_PERSONS_SUCCESS:
-      return { ...state, persons: action.persons, loading: false };
-    case Actions.LOAD_PERSONS_FAILURE:
-      return { ...state, error: action.error, loading: false };
-    case Actions.ADD_PERSON:
-      return { persons: [...state.persons, action.person], loading: false, error: undefined };
-    default:
-      return state;
-  }
-}
+const personReducer = createReducer(
+  initialPersonState,
+  on(loadPersons, state => {
+    return { ...state, loading: true };
+  }),
+  on(loadPersonsSuccess, (state, { persons }) => {
+    return { ...state, persons: persons, loading: false };
+  }),
+  on(loadPersonsFailure, (state, { error }) => {
+    return { ...state, error: error, loading: false };
+  }),
+  on(addPerson, (state, { person }) => {
+    state.persons.push(person);
+    return { ...state };
+  })
+);
+
+export const PERSON_FEATURE_KEY = "personFeatureKey";
 
 export { personReducer as PersonReducer };
