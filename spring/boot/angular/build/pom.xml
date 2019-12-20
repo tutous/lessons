@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de-tutous-spring</groupId>
+		<artifactId>de-tutous-spring-parent</artifactId>
+		<version>${version}</version>
+	</parent>
+
+	<properties>
+		<unpack.folder>${project.basedir}/target/${project.name}-${project.version}</unpack.folder>
+	</properties>
+
+	<packaging>war</packaging>
+
+	<artifactId>de-tutous-spring-build</artifactId>
+	<version>${build.version}</version>
+	<name>de-tutous-spring-build</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>de-tutous-spring</groupId>
+			<artifactId>de-tutous-spring-backend</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>de-tutous-spring</groupId>
+			<artifactId>de-tutous-spring-frontend</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.1.1</version><!--$NO-MVN-MAN-VER$ -->
+				<executions>
+					<execution>
+						<id>prepare-package</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>de-tutous-spring</groupId>
+									<artifactId>de-tutous-spring-frontend</artifactId>
+									<version>${frontend.version}</version>
+									<classifier>war</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${unpack.folder}</outputDirectory>
+								</artifactItem>
+								<artifactItem>
+									<groupId>de-tutous-spring</groupId>
+									<artifactId>de-tutous-spring-backend</artifactId>
+									<version>${backend.version}</version>
+									<classifier>war</classifier>
+									<type>zip</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${unpack.folder}</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.3</version>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

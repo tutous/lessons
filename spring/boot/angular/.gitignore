@@ -1,0 +1,11 @@
+.project
+.classpath
+**/logs
+**/target
+**/.project
+**/.classpath
+**/.settings
+**/dist
+**/node
+**/node_modules
+/bin/

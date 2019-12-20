@@ -1,0 +1,43 @@
+== API guide
+
+=== DataContainerController
+
+Daten Kontainer anlegen ...
+
+==== Security
+
+-H 'Authorization: Basic dXNlcjp1c2Vy'
+
+==== create DC with _file_ and empty _data_
+
+==== CURL
+include::{snippets}/testCreateWithFileAndEmptyData/curl-request.adoc[]
+
+==== Request
+include::{snippets}/testCreateWithFileAndEmptyData/http-request.adoc[]
+
+==== Response
+include::{snippets}/testCreateWithFileAndEmptyData/http-response.adoc[]
+
+==== create DC with _file_ and valid _data_
+
+==== CURL
+include::{snippets}/testCreateWithFileAndValidData/curl-request.adoc[]
+
+==== Request
+include::{snippets}/testCreateWithFileAndValidData/http-request.adoc[]
+
+==== Response
+include::{snippets}/testCreateWithFileAndValidData/http-response.adoc[]
+
+
+==== create DC with _file_ and unvalid _data_
+
+==== CURL
+include::{snippets}/testCreateWithFileAndUnvalidData/curl-request.adoc[]
+
+==== Request
+include::{snippets}/testCreateWithFileAndUnvalidData/http-request.adoc[]
+
+==== Response
+include::{snippets}/testCreateWithFileAndUnvalidData/http-response.adoc[]

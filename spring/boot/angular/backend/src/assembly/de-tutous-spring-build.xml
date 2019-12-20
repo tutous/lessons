@@ -1,0 +1,21 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="build/xsd/assembly-2.0.0.xsd http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+	<id>war</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<baseDirectory></baseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>WEB-INF/lib</outputDirectory>
+			<useProjectArtifact>false</useProjectArtifact>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>/target/classes</directory>
+			<outputDirectory>WEB-INF/classes</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

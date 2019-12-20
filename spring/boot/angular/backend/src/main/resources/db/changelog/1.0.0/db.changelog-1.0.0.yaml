@@ -1,0 +1,13 @@
+databaseChangeLog:
+- changeSet:
+    id: 1.0.0-init-user-tables
+    author: init-tables
+    changes:
+    - sqlFile:
+        dbms: h2
+        encoding: utf8
+        endDelimiter: ";"
+        path: db/changelog/1.0.0/ddl/...tables.sql
+        relativeToChangelogFile: false
+        splitStatements: true
+        stripComments: true

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de-tutous-spring</groupId>
+	<artifactId>de-tutous-spring-parent</artifactId>
+
+	<packaging>pom</packaging>
+	<version>${version}</version>
+	<name>de-tutous-spring-parent</name>
+
+	<properties>
+		<version>1.0.0-SNAPSHOT</version>
+		<!-- impl -->
+		<bom.version>1.0.0-SNAPSHOT</bom.version>		
+		<api.version>1.0.0-SNAPSHOT</api.version>
+		<common.version>1.0.0-SNAPSHOT</common.version>
+		<frontend.version>1.0.0-SNAPSHOT</frontend.version>
+		<backend.version>1.0.0-SNAPSHOT</backend.version>
+		<!-- result -->
+		<build.version>${version}</build.version>
+		<deploy.version>${version}</deploy.version>
+		<citest.version>${version}</citest.version>
+		<!-- citest tomcat -->
+		<context.path>konditor</context.path>
+		<citest.catalina.home>E:\server\apache-tomcat-9.0.24</citest.catalina.home>
+		<citest.catalina.base>E:\src\konditor\konditor-deploy\tomcat</citest.catalina.base>
+		<citest.catalina.java>E:\tools\jdk1.8.0_202</citest.catalina.java>
+		<citest.catalina.startup>${citest.catalina.home}\bin\startup.bat</citest.catalina.startup>
+		<citest.catalina.shutdown>${citest.catalina.home}\bin\shutdown.bat</citest.catalina.shutdown>
+		<citest.catalina.url>http://localhost:8080/konditor/actuator/health</citest.catalina.url>
+		<!-- compiler -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<!-- test -->
+		<junit4.version>4.12</junit4.version>
+		<junit.jupiter.version>5.3.2</junit.jupiter.version>
+		<junit.platform.version>1.2.0</junit.platform.version>
+		<powermock.version>1.7.1</powermock.version>
+	</properties>
+
+	<modules>
+		<module>bom</module>
+		<module>common</module>
+		<module>api</module>
+		<module>backend</module>
+		<module>frontend</module>
+		<module>build</module>
+		<module>deploy</module>
+		<module>citest</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.junit.platform</groupId>
+							<artifactId>junit-platform-surefire-provider</artifactId>
+							<version>${junit.platform.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.junit.jupiter</groupId>
+							<artifactId>junit-jupiter-engine</artifactId>
+							<version>${junit.jupiter.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>org.junit.vintage</groupId>
+							<artifactId>junit-vintage-engine</artifactId>
+							<version>${junit.jupiter.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+		</plugins>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-bom</artifactId>
+				<version>${bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+	</dependencies>
+
+</project>

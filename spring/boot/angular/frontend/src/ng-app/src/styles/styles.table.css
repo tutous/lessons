@@ -1,0 +1,50 @@
+/* .datatable div.ui-table-wrapper table {
+  table-layout: auto;
+}
+
+.datatable table th {
+  text-align: left;
+}
+
+.datatable table th {
+  vertical-align: bottom;
+}
+
+.datatable table th input {
+  width: 100%;
+} */
+
+table.datatable {
+  table-layout: auto;
+  margin-bottom: 7px;
+}
+
+table.datatable th,
+table.datatable td {
+  text-align: left;
+  padding: 0px 7px 7px 7px;
+  vertical-align: bottom;
+}
+
+table.datatable th input {
+  width: 100%;
+}
+
+/*override material*/
+table.datatable td.mat-cell:first-of-type,
+table.datatable td.mat-footer-cell:first-of-type,
+table.datatable th.mat-header-cell:first-of-type {
+  padding-left: 0px;
+
+}
+
+table.datatable td.mat-cell:last-of-type,
+table.datatable td.mat-footer-cell:last-of-type,
+table.datatable th.mat-header-cell:last-of-type {
+  padding-right: 0px;
+}
+
+
+table.datatable tr.mat-header-row {
+  height: auto;
+}

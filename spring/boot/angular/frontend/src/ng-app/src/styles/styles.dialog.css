@@ -1,0 +1,4 @@
+/*override material*/
+div .mat-dialog-container {
+  padding: 20px;
+}

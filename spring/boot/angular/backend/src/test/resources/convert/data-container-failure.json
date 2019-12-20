@@ -1,0 +1,21 @@
+{
+	"name": "dc",
+	"type": "notexist",
+	"vehicleClasses": [
+		"VC1",
+		"VC2"
+	],
+	"generation": "2019/50",
+	"partNumber": "12345678912",
+	"diagnosticBus": "CAN",
+	"diagnosticAddress": "1A2D",
+	"diagnosticKwp": "UDS",
+	"transportProtocol": "TP2_0",
+	"description": "description",
+	"members": [
+		{
+			"id": 1,
+			"userId": 1,
+			"userRole": "DC_SUPERVISOR"
+		} ]
+}

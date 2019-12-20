@@ -1,0 +1,55 @@
+div.view-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-col-view-container);
+  height: 100%;
+}
+
+div.view-container div.header {
+  background-color: var(--bg-col-head);
+  min-height: 80px;
+  flex-grow: 0;
+  padding: 0 10px;
+}
+
+div.view-container div.content {
+  background-color: var(--bg-col-content);
+  color: var(--col-content);
+  flex-grow: 1;
+  /* padding: 20px; */
+
+  display: flex;
+}
+
+div.view-container div.content div.card {
+  background-color: var(--bg-col-card);
+  padding: 20px;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+div.view-container div.content div.card h1 {
+  margin-top: 0px;
+}
+
+div.view-container div.statusbar,
+div.view-container div.navbar {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-col-nav-bar);
+  height: 50px;
+  flex-grow: 0;
+  padding: 0 10px;
+}
+
+div.view-container div.statusbar {
+  background-color: var(--bg-col-status-bar);
+}
+
+div.view-container div.messagebar {
+  position: absolute;
+  top: 130px;
+  width: 100%;
+  z-index: 10;
+  overflow: hidden;
+}

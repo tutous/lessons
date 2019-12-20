@@ -1,0 +1,31 @@
+div.row-flex {
+  display: flex;
+  padding: 5px 0;
+  white-space: nowrap;
+}
+
+div.row-flex div.col-100 {
+  flex-basis: 100%;
+}
+
+div.row-flex div.col-70 {
+  flex-basis: 70%;
+}
+
+div.row-flex div.col-30 {
+  flex-basis: 30%;
+}
+
+div.row-flex div.col-25 {
+  flex-basis: 15%;
+  flex-shrink: 0;
+}
+
+div.row-flex div.col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+div.row-flex div.col-center {
+  justify-content: center;
+}

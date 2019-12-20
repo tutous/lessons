@@ -1,0 +1,21 @@
+<server description="new server">
+
+	<!-- Enable features -->
+	<featureManager>
+		<feature>springBoot-2.0</feature>
+		<feature>servlet-4.0</feature>
+		<feature>localConnector-1.0</feature>
+		<feature>websocket-1.1</feature>
+		<feature>cdi-2.0</feature>
+	</featureManager>
+
+	<httpEndpoint httpPort="8090" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+	<applicationManager autoExpand="true"/>
+
+	<applicationMonitor updateTrigger="mbean"/>
+
+
+    <webApplication contextRoot="konditor" id="vwg-konditor-backend" location="vwg-konditor-backend-1.0.0-SNAPSHOT.war" name="vwg-konditor-backend"/>
+
+</server>

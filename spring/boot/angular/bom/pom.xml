@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de-tutous-spring</groupId>
+	<artifactId>de-tutous-spring-bom</artifactId>
+	<version>${bom.version}</version>
+	<name>de-tutous-spring-bom</name>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<version>1.0.0-SNAPSHOT</version>
+		<!-- expose impl -->
+		<bom.version>1.0.0-SNAPSHOT</bom.version>
+		<common.version>1.0.0-SNAPSHOT</common.version>
+		<api.version>1.0.0-SNAPSHOT</api.version>
+		<frontend.version>1.0.0-SNAPSHOT</frontend.version>
+		<backend.version>1.0.0-SNAPSHOT</backend.version>
+		<!-- expose result -->
+		<build.version>${version}</build.version>
+		<deploy.version>${version}</deploy.version>
+		<!-- spring boot -->
+		<spring.boot.parent>2.2.0.RELEASE</spring.boot.parent>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- de-tutous-spring -->
+
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-common</artifactId>
+				<version>${common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-api</artifactId>
+				<version>${api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-build</artifactId>
+				<version>${build.version}</version>
+				<type>war</type>
+			</dependency>
+
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-deploy</artifactId>
+				<version>${deploy.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-backend</artifactId>
+				<version>${backend.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>de-tutous-spring</groupId>
+				<artifactId>de-tutous-spring-frontend</artifactId>
+				<version>${frontend.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<!-- spring boot -->
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot.parent}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.plugin</groupId>
+				<artifactId>spring-plugin-core</artifactId>
+				<version>2.0.0.RELEASE</version>
+			</dependency>
+
+			<!-- JUnit jupiter + vintage -->
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>5.5.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>5.5.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-params</artifactId>
+				<version>5.5.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.vintage</groupId>
+				<artifactId>junit-vintage-engine</artifactId>
+				<version>5.5.2</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- assertj -->
+
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>3.13.2</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- mockito -->
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>junit-jupiter</artifactId>
+				<version>2.20.0</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>3.1.0</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- swagger -->
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>3.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>3.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-spring-web</artifactId>
+				<version>3.0.0-SNAPSHOT</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring.boot.parent}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+		<repository>
+			<id>spring-releases</id>
+			<name>Spring Releases</name>
+			<url>https://repo.spring.io/release</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>springfox-snapshots</id>
+			<name>Springfox Snapshots</name>
+			<url>https://oss.jfrog.org/simple/oss-snapshot-local</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>springfox-releases</id>
+			<name>Springfox Releases</name>
+			<url>https://jcenter.bintray.com</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-releases</id>
+			<name>Spring Releases</name>
+			<url>https://repo.spring.io/release</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+</project>

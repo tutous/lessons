@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.ui.externaltools.ProgramLaunchConfigurationType">
+    <booleanAttribute key="org.eclipse.debug.core.capture_output" value="false"/>
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="CATALINA_BASE" value="E:\src\konditor\konditor-deploy\tomcat"/>
+        <mapEntry key="CATALINA_HOME" value="E:\server\apache-tomcat-9.0.24"/>
+        <mapEntry key="JAVA_HOME" value="E:\tools\jdk1.8.0_202"/>
+    </mapAttribute>
+    <booleanAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_OUTPUT_ON" value="false"/>
+    <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
+    <stringAttribute key="org.eclipse.ui.externaltools.ATTR_LOCATION" value="E:\server\apache-tomcat-9.0.24\bin\startup.bat"/>
+</launchConfiguration>

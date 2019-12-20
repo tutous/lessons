@@ -1,0 +1,101 @@
+{
+  "Commons": {
+    "Buttons": {
+      "Save": "Speichern",
+      "SaveUpdate": "Änderungen Speichern",
+      "Edit": "Bearbeiten",
+      "Cancel": "Abbrechen",
+      "Ok": "Ok",
+      "Open": "Öffnen",
+      "Create": "Erstellen",
+      "Delete": "Löschen",
+      "SearchThrough": "Durchsuchen",
+      "SelectFile": "Datei auswählen",
+      "DcCheck": "DC Prüfen",
+      "DcComplete": "DC Fertigstellen"
+    },
+    "Labels" : {
+      "DataContainer": "Datencontainer",
+      "Description": "Beschreibung",
+      "State": "Status",
+      "Flag": "Flag",
+      "CreatedBy": "Ersteller",
+      "ModifiedBy": "Letzter Bearbeiter",
+      "ModifiedOn": "Letzte Bearbeitung",
+      "EditingBy": "In Bearbeitung durch",
+      "NoFileSelected": "Keine Datei ausgewählt",
+      "ModuleResponsibles": "Modul Verantwortlicher",
+      "ModuleEditor": "Modul Bearbeiter",
+      "Modules": "Module",
+      "Parameters": "Parameter"
+    },
+    "Message": {
+      "UpdateSuccess": "Ihre Änderungen wurden erfolgreich gespeichert."
+    }
+  },
+  "DataContainer": {
+    "Page": {
+      "View" : {
+        "Title": "Datencontainer"
+      },
+      "Edit": {
+        "Title": "Datencontainer Grunddaten"
+      },
+      "Details": {
+        "Title": "Datencontainer Details"
+      }
+    },
+    "Labels": {
+      "Name": "DC Name",
+      "Type": "DC Typ",
+      "Generation": "Generation ",
+      "PartNumber": "Teilenummer",
+      "DiagnosticBus": "Diagnose Bus",
+      "DiagnosticAddress": "Diagnose Adresse",
+      "DiagnosticKWP": "Diagnose KWP",
+      "TransportProtocol": "Transport Protokoll",
+      "DiagnosticRequirement": "Diagnosevorgaben",
+      "VehicleClasses": "Fahrzeugklasse",
+      "DcResponsibles": "DC Verantwortlicher"
+    },
+    "Message": {
+      "CreateSucces": "Der Datencontainer wurde erfolgreich erstellt.",
+      "DeleteSucces": "Der Datencontainer wurde erfolgreich gelöscht.",
+      "SaveErrorSwap": "Das Speichern von Swap Datencontainern wird zurzeit nicht unterstützt.",
+      "ValidationError.NameNotUnique": "Es existiert bereits ein Datencontainer mit diesem Namen."
+    },
+    "Confirmation": {
+      "Delete" : {
+        "Title": "Datencontainer löschen",
+        "Question": "Soll der Datencontainer {{name}} wirklich gelöscht werden?"
+      }
+    }
+  },
+  "Validation": {
+    "Message": {
+      "Required": "Wert wird benötigt.",
+      "InvalidVehicelClasses": "Unbekannte Fahrzeugklassen: {{vehicleClasses}}",
+      "InvalidYearWeekFormat": "Wert entspricht nicht dem Format: YYYY/KW",
+      "InvalidDigitHex": "Wert muss eine Hexadezimalzahl sein.",
+      "MinLength": "Wert muss mindestens {{length}} Zeichen lang sein.",
+      "MaxLength": "Wert darf maximal {{length}} Zeichen lang sein.",
+      "FileMaxSizeMb": "Datei darf maximal {{size}} MB groß sein."
+    }
+  },
+  "Error": {
+    "Code": {
+      "100": "Der Datencontainer enthält ungültige Werte.",
+      "101": "Der Datencontainer konnte nicht gefunden werden.",
+      "102": "Datei konnte nicht gespeichert werden.",
+      "103": "Datei konnte nicht gelöscht werden.",
+      "200": "Die Fahrzeugklasse konnte nicht gefunden werden.",
+      "201": "Die Fahrzeugklassen konnten nicht gefunden werden.",
+      "300": "Die Person(en) konnte(n) nicht gefunden werden.",
+      "400": "Die Rolle konnte nicht gefunden werden.",
+
+      "500": "Fehler (500)"
+    }
+  },
+  "_COMMENT_ENUM_DATA_CONTAINER_STATE": "",
+  "IN_PROGRESS" : "In Bearbeitung"
+}

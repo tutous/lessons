@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+	<proxies>
+		<proxy>
+			<active>true</active>
+			<protocol>https</protocol>
+			<username>FQ6Y9ZU</username>
+			<password>S4mnybscqy</password>
+			<host>10.252.76.110</host>
+			<port>8080</port>
+			<nonProxyHosts>127.0.0.1|localhost</nonProxyHosts>
+		</proxy>
+	</proxies>
+
+	<servers>
+	</servers>
+
+	<mirrors>
+		<mirror>
+			<id>maven-central</id>
+			<mirrorOf>!spring-snapshots,!spring-milestones,!spring-releases,!springfox-releases,!springfox-snapshots,*</mirrorOf>
+			<url>https://repo1.maven.org/maven2/</url>
+		</mirror>
+	</mirrors>
+
+	<pluginGroups>
+		<pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+		<pluginGroup>org.jacoco</pluginGroup>
+	</pluginGroups>
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.host.url>http://127.0.0.1:9000</sonar.host.url>
+			</properties>
+		</profile>
+	</profiles>
+
+</settings>
