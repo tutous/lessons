@@ -7,7 +7,7 @@ import * as mod_callable from './interfaces/callable';
 import * as mod_import01 from './moduls/import01';
 import * as mod_types from './types/types';
 import * as mod_advanced from './types/advanced';
+import * as mod_Moduls  from './moduls/import01'
 
-mod_advanced;
-
+mod_decorators;
 

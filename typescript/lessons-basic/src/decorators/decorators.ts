@@ -18,4 +18,5 @@ class Greeter {
 
 let greeter: Greeter = new Greeter("Uwe");
 console.log(greeter.toString());
+console.log(greeter);
 console.log(greeter.greet());

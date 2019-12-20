@@ -13,16 +13,16 @@ interface Car {
 }
 
 let cols: Column[] = [
-    { field: 'vin', header: 'Vin' },
     { field: 'year', header: 'Year' },
     { field: 'brand', header: 'Brand' },
-    { field: 'color', header: 'Color' }
+    { field: 'color', header: 'Color' },
+    { field: 'vin', header: 'Vin' }
 ];
 
 let cars: Car[] = [
     {
-        vin: "d00250a3",
         brand: "BMW",
+        vin: "d00250a3",
         year: 1978,
         color: "Blue"
     },
@@ -51,3 +51,25 @@ dynaData['prop2'] = { index: 0, size: 0 };
 dynaData['prop2'].index = 1;
 
 console.log(dynaData);
+
+// example 3 ...variable
+
+let array01:number[]=[1,2,3];
+let array02:number[]=[...array01,4,5,6];
+console.log(array02);
+
+interface Person {
+  name: string;
+  foreName: string;
+  city: string;
+}
+
+let uwe: Person = {
+  name: "Sluga",
+  foreName: "Uwe",
+  city: "Wob"
+};
+
+console.log(uwe);
+let anton: Person = { ...uwe, foreName: "Anton" };
+console.log(anton);

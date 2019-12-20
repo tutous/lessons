@@ -69,11 +69,12 @@ interface Employee {
   fullName: string;
   gender: Gender;
 }
-let employeea = { id: 1, fullName: "Uwe Sluga", gender: Gender.MALE };
+let employeea:Employee = { id: 1, fullName: "Uwe Sluga", gender: Gender.MALE };
 console.log(employeea);
 // override by type assertion
-let employeeb = {} as Employee;
+let employeeb:any = {};
 console.log(typeof employeeb);
+employeeb = {} as Employee;
 employeeb.id = 2;
 employeeb.fullName = "Sabine Sluga";
 //employeeb.gender = Gender.FEMAL;
